@@ -8,25 +8,25 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-<Grid>
+<Grid container spacing={5} justifyContent="center" alignItems="center">
 
          {/* Encabezado */}
-         <Grid>Elemento: Encabezado</Grid>
+         <Grid size={{ xs: 12, md: 12 }} sx={{ display: { xs: "none", md: "block"} }}>Elemento: Encabezado</Grid>
 
          {/* Alertas */}
          <Grid>Elemento: Alertas</Grid>
 
          {/* Selector */}
-         <Grid>Elemento: Selector</Grid>
+         <Grid size={{ xs: 12, md: 3  }}>Elemento: Selector</Grid>
 
          {/* Indicadores */}
-         <Grid>Elemento: Indicadores</Grid>
+         <Grid size={{ xs: 12, md: 9 }}>Elemento: Indicadores</Grid>
 
          {/* Gráfico */}
          <Grid>Elemento: Gráfico</Grid>
 
          {/* Tabla */}
-         <Grid>Elemento: Tabla</Grid>
+         <Grid sx={{ display: { xs: "none", md: "block" } }}>Elemento: Tabla</Grid>
 
          {/* Información adicional */}
          <Grid>Elemento: Información adicional</Grid>
