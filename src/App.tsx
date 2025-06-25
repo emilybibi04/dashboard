@@ -1,29 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import React from 'react';
 import { Grid } from '@mui/material';
+import HeaderUI from './components/HeaderUI';
+import AlertUI from './components/AlertUI';
+import SelectorUI from './components/SelectorUI';
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-<Grid container spacing={5} justifyContent="center" alignItems="center">
-
+    <Grid container spacing={5} justifyContent="center" alignItems="center">
          {/* Encabezado */}
          <Grid size={{ xs: 12, md: 12 }} sx={{ display: { xs: "none", md: "block"} }}>Elemento: Encabezado</Grid>
+         <HeaderUI/>
 
          {/* Alertas */}
-         <Grid>Elemento: Alertas</Grid>
+         <Grid container justifyContent="right" alignItems="center">Elemento: Alertas</Grid>
+         <AlertUI description="No se preveen lluvias"/>
 
          {/* Selector */}
          <Grid size={{ xs: 12, md: 3  }}>Elemento: Selector</Grid>
+         <SelectorUI/>
 
          {/* Indicadores */}
          <Grid size={{ xs: 12, md: 9 }}>Elemento: Indicadores</Grid>
 
          {/* Gráfico */}
-         <Grid>Elemento: Gráfico</Grid>
+         <Grid sx={{ display: { xs: "none", md: "block"} }}>Elemento: Gráfico</Grid>
 
          {/* Tabla */}
          <Grid sx={{ display: { xs: "none", md: "block" } }}>Elemento: Tabla</Grid>
@@ -34,5 +33,4 @@ function App() {
       </Grid>
   );
 }
-
 export default App
