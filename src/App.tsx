@@ -3,7 +3,10 @@ import { Grid } from '@mui/material';
 import HeaderUI from './components/HeaderUI';
 import AlertUI from './components/AlertUI';
 import SelectorUI from './components/SelectorUI';
+import IndicatorUI from './components/IndicatorUI';
+import DataFetcher from './functions/DataFetcher';
 function App() {
+  const dataFetcherOutput = DataFetcher();
   return (
     <Grid container spacing={5} justifyContent="center" alignItems="center">
          {/* Encabezado */}
@@ -19,10 +22,26 @@ function App() {
          <SelectorUI/>
 
          {/* Indicadores */}
-         <Grid size={{ xs: 12, md: 9 }}>Elemento: Indicadores</Grid>
+         <Grid size={{ xs: 12, md: 9 }}>
+          <Grid size={{ xs: 12, md: 3 }}>
+            <IndicatorUI title='Temperatura (2m)' description='XX°C' />
+            </Grid>
+            <Grid size={{ xs: 12, md: 3 }}>
+                <IndicatorUI title='Temperatura aparente' description='YY°C' />
+            </Grid>
+            <Grid size={{ xs: 12, md: 3 }}>
+                <IndicatorUI title='Velocidad del viento' description='ZZkm/h' />
+            </Grid>
+            <Grid size={{ xs: 12, md: 3 }}>
+                <IndicatorUI title='Humedad relativa' description='NN%' />
+            </Grid>
+            
+         </Grid>
+
 
          {/* Gráfico */}
-         <Grid sx={{ display: { xs: "none", md: "block"} }}>Elemento: Gráfico</Grid>
+         <Grid sx={{ display: { xs: "none", md: "block"} }}>Elemento: Gráfico
+         </Grid>
 
          {/* Tabla */}
          <Grid sx={{ display: { xs: "none", md: "block" } }}>Elemento: Tabla</Grid>
