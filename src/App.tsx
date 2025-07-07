@@ -35,25 +35,25 @@ function App() {
                      <Grid size={{ xs: 12, md: 3 }} >
                          <IndicatorUI
                              title='Temperatura (2m)'
-                             description={dataFetcherOutput.data.current.temperature_2m + " " + dataFetcherOutput.data.current.temperature_2m} />
+                             description={dataFetcherOutput.data.current.temperature_2m + " " + dataFetcherOutput.data.current_units.temperature_2m} />
                      </Grid>
 
                      <Grid size={{ xs: 12, md: 3 }}>
                          <IndicatorUI
                              title='Temperatura aparente'
-                             description={dataFetcherOutput.data.current.apparent_temperature + " " + dataFetcherOutput.data.current.apparent_temperature} />
+                             description={dataFetcherOutput.data.current.apparent_temperature + " " + dataFetcherOutput.data.current_units.apparent_temperature} />
                      </Grid>
 
                      <Grid size={{ xs: 12, md: 3 }}>
                          <IndicatorUI
                              title='Velocidad del viento'
-                             description={dataFetcherOutput.data.current.wind_speed_10m + " " + dataFetcherOutput.data.current.wind_speed_10m} />
+                             description={dataFetcherOutput.data.current.wind_speed_10m + " " + dataFetcherOutput.data.current_units.wind_speed_10m} />
                      </Grid>
 
                      <Grid size={{ xs: 12, md: 3 }}>
                          <IndicatorUI
                              title='Humedad relativa'
-                             description={dataFetcherOutput.data.current.relative_humidity_2m + " " + dataFetcherOutput.data.current.relative_humidity_2m} />
+                             description={dataFetcherOutput.data.current.relative_humidity_2m + " " + dataFetcherOutput.data.current_units.relative_humidity_2m} />
                      </Grid>
 
                  </>
