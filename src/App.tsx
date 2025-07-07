@@ -23,19 +23,41 @@ function App() {
 
          {/* Indicadores */}
          <Grid size={{ xs: 12, md: 9 }}>
-          <Grid size={{ xs: 12, md: 3 }}>
-            <IndicatorUI title='Temperatura (2m)' description='XX°C' />
-            </Grid>
-            <Grid size={{ xs: 12, md: 3 }}>
-                <IndicatorUI title='Temperatura aparente' description='YY°C' />
-            </Grid>
-            <Grid size={{ xs: 12, md: 3 }}>
-                <IndicatorUI title='Velocidad del viento' description='ZZkm/h' />
-            </Grid>
-            <Grid size={{ xs: 12, md: 3 }}>
-                <IndicatorUI title='Humedad relativa' description='NN%' />
-            </Grid>
-            
+          {/* Renderizado condicional de los datos obtenidos */}
+
+                 {dataFetcherOutput.loading && <p>Cargando datos...</p>}
+                 {dataFetcherOutput.error && <p>Error: {dataFetcherOutput.error}</p>}
+                 {dataFetcherOutput.data && (
+                 <>
+
+                     {/* Indicadores con datos obtenidos */}
+
+                     <Grid size={{ xs: 12, md: 3 }} >
+                         <IndicatorUI
+                             title='Temperatura (2m)'
+                             description={dataFetcherOutput.data.hourly_units.temperature_2m + " " + dataFetcherOutput.data.hourly_units.temperature_2m} />
+                     </Grid>
+
+                     <Grid size={{ xs: 12, md: 3 }}>
+                         <IndicatorUI
+                             title='Temperatura aparente'
+                             description={dataFetcherOutput.data.hourly_units.apparent_temperature + " " + dataFetcherOutput.data.hourly_units.apparent_temperature} />
+                     </Grid>
+
+                     <Grid size={{ xs: 12, md: 3 }}>
+                         <IndicatorUI
+                             title='Velocidad del viento'
+                             description={dataFetcherOutput.data.hourly_units.wind_speed_10m + " " + dataFetcherOutput.data.hourly_units.wind_speed_10m} />
+                     </Grid>
+
+                     <Grid size={{ xs: 12, md: 3 }}>
+                         <IndicatorUI
+                             title='Humedad relativa'
+                             description={dataFetcherOutput.data.hourly_units.relative_humidity_2m + " " + dataFetcherOutput.data.hourly_units.relative_humidity_2m} />
+                     </Grid>
+
+                 </>
+                 )}
          </Grid>
 
 
