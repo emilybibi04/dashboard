@@ -23,6 +23,7 @@ export default function DataFetcher({ city }: DataFetcherProps) : DataFetcherOut
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+    //verificación de datos que tengan 10 min de antiguedad; vigencia
     const CACHE_DURATION = 10 * 60 * 1000;
 
     useEffect(() => {
@@ -43,7 +44,7 @@ export default function DataFetcher({ city }: DataFetcherProps) : DataFetcherOut
         const storedTimestamp = localStorage.getItem(timestampKey);
 
         const now = new Date().getTime();
-
+        //evito hacer fetch; eficiencia
         if (storedData && storedTimestamp) {
             const age = now - parseInt(storedTimestamp);
             if (age < CACHE_DURATION) {
@@ -67,6 +68,7 @@ export default function DataFetcher({ city }: DataFetcherProps) : DataFetcherOut
                 localStorage.setItem(timestampKey, now.toString());
             } catch (err: any) {
                 if (err instanceof Error) {
+                    //intenta recuperar los datos anteriormente almacenados; resiliencia
                     if (storedData) {
                         setData(JSON.parse(storedData));
                         setError("Error de red. Mostrando datos almacenados.");
