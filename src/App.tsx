@@ -23,10 +23,9 @@ function App() {
 
             {/* Selector */}
             <Grid size={{ xs: 12, md: 3  }}>
-            {dataFetcherOutput.data && (
                 <SelectorUI onCityChange={setCity} />
-            )}
             </Grid>
+
             
             {/* Indicadores */}
             <Grid size={{ xs: 12, md: 9 }}>
