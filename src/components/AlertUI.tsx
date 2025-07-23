@@ -2,7 +2,7 @@ import Alert from '@mui/material/Alert';
 
 interface AlertConfig {
   description: string;
-  severity?: 'success' | 'info' | 'warning' | 'error'; // <-- AÑADIMOS ESTO
+  severity?: 'success' | 'info' | 'warning' | 'error';
 }
 
 export default function AlertUI({ description, severity = 'success' }: AlertConfig) {

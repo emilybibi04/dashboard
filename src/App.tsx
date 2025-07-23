@@ -1,8 +1,13 @@
-import './App.css'
-import DashboardLayout from './components/DashboardLayout'
+// src/App.tsx
+import './App.css';
+import DashboardLayout from './components/DashboardLayout';
 
 function App() {
-  return <DashboardLayout />
+  return (
+    <>
+      <DashboardLayout />
+    </>
+  );
 }
 
-export default App
+export default App;
