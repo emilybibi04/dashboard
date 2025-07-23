@@ -19,7 +19,7 @@ export default function DashboardLayout() {
       </Paper>
 
       <Grid container spacing={3}>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3} {...({} as any)}>
           <Paper elevation={1} sx={{ p: 2 }}>
             <SelectorUI onCityChange={setCity} />
           </Paper>
@@ -30,31 +30,31 @@ export default function DashboardLayout() {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={9}>
+        <Grid item xs={12} md={9} {...({} as any)}>
           {loading ? (
             <p>Cargando datos...</p>
           ) : (
             <>
               <Grid container spacing={2}>
-                <Grid item xs={6} md={3}>
+                <Grid item xs={6} md={3} {...({} as any)}>
                   <IndicatorUI
                     title="Temp. (2m)"
                     description={data?.current.temperature_2m + " " + data?.current_units.temperature_2m}
                   />
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid item xs={6} md={3} {...({} as any)}>
                   <IndicatorUI
                     title="Sensación"
                     description={data?.current.apparent_temperature + " " + data?.current_units.apparent_temperature}
                   />
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid item xs={6} md={3} {...({} as any)}>
                   <IndicatorUI
                     title="Humedad"
                     description={data?.current.relative_humidity_2m + " " + data?.current_units.relative_humidity_2m}
                   />
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid item xs={6} md={3} {...({} as any)}>
                   <IndicatorUI
                     title="Viento"
                     description={data?.current.wind_speed_10m + " " + data?.current_units.wind_speed_10m}
